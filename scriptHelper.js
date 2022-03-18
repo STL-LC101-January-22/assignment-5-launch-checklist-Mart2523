@@ -33,6 +33,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     let fuelStatus = document.getElementById("fuelStatus");
     let cargoStatus = document.getElementById("cargoStatus");
     let launchStatus = document.getElementById("launchStatus");
+    let faultyItems = document.getElementById("faultyItems");
+    faultyItems.style.visibility = "hidden"
     
   if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty" || validateInput(cargoLevel) === "Empty") {
   window.alert("All fields are required!");
@@ -41,7 +43,6 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
   window.alert("Valid information is required for each field!");
 
 } else {
-  let faultyItems = document.getElementById("faultyItems");
   list.style.visibility = "visible";
   faultyItems.style.visibility = "visible";
   document.getElementById("pilotStatus").innerHTML = `Pilot ${pilotName.value} is ready to launch`;
